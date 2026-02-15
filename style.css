@@ -1,3 +1,19 @@
+/* --- YENİ EKLENEN FONT TANIMLARI --- */
+@font-face {
+    font-family: 'Cartoon Slam';
+    src: url('Cartoon Slam.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Labrada';
+    src: url('Labrada-Bold.ttf') format('truetype');
+    /* Font dosyası Bold olduğu için normal ağırlıkta bu dosyanın görünmesini sağlıyoruz */
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* --- CSS RESET & VARIABLES --- */
 * {
     margin: 0;
@@ -20,14 +36,17 @@ html {
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+    /* Genel metinler için Labrada fontu atandı */
+    font-family: 'Labrada', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: var(--text-dark);
     background: var(--bg-light);
     line-height: 1.7;
+    letter-spacing: 0.5px;
 }
 
-h1, h2, h3, .logo, .timer-box span {
-    font-family: 'Playfair Display', serif;
+/* --- SADECE BAŞLIKLAR İÇİN FONT AYARI (KORUNDU) --- */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cartoon Slam', cursive;
 }
 
 /* --- NAVIGATION --- */
@@ -61,6 +80,11 @@ nav.scrolled {
     display: flex;
     align-items: center;
     gap: 15px;
+    font-family: 'Cartoon Slam', cursive;
+    
+    /* Link olduğu için alt çizgiyi kaldırıyoruz */
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .logo img {
@@ -88,7 +112,7 @@ nav a {
     font-size: 0.85rem;
     transition: color 0.3s;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
     cursor: pointer;
 }
 
@@ -126,6 +150,7 @@ nav a:hover {
     line-height: 1.2;
     margin-bottom: 1.5rem;
     font-weight: 700;
+    font-family: 'Cartoon Slam', cursive; 
 }
 
 .hero-date {
@@ -179,7 +204,7 @@ nav a:hover {
     text-transform: uppercase;
     letter-spacing: 3px;
     font-weight: 400;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Cartoon Slam', cursive;
 }
 
 .countdown {
@@ -204,6 +229,7 @@ nav a:hover {
     display: inline-block;
     min-width: 90px;
     text-align: center;
+    font-family: 'Cartoon Slam', cursive;
 }
 
 .timer-box small {
@@ -231,6 +257,7 @@ section {
     margin-bottom: 1rem;
     position: relative;
     display: inline-block;
+    font-family: 'Cartoon Slam', cursive;
 }
 
 .section-title::after {
@@ -301,11 +328,11 @@ section {
 }
 
 .modal-title {
-    font-family: 'Playfair Display', serif;
     font-size: 2.5rem;
     color: var(--primary-navy);
     margin-bottom: 1rem;
     font-weight: 600;
+    font-family: 'Cartoon Slam', cursive;
 }
 
 .modal-divider {
@@ -316,11 +343,11 @@ section {
 }
 
 .modal-subtitle {
-    font-family: 'Playfair Display', serif;
     font-size: 2rem;
     color: var(--accent-gold);
     margin-bottom: 1.5rem;
     font-weight: 400;
+    font-family: 'Cartoon Slam', cursive;
 }
 
 .modal-text {
@@ -401,6 +428,7 @@ section {
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
     color: var(--primary-navy);
+    font-family: 'Cartoon Slam', cursive;
 }
 
 .card-subtitle {
@@ -459,16 +487,43 @@ section {
     color: var(--primary-navy);
     margin-bottom: 1rem;
     font-weight: 700;
+    font-family: 'Cartoon Slam', cursive;
 }
 
 .fee-price {
     font-size: 3rem;
     color: var(--accent-gold);
     font-weight: 700;
-    font-family: 'Playfair Display', serif;
     margin-bottom: 1.5rem;
+    font-family: 'Cartoon Slam', cursive;
+
+    /* Bu kısmı style.css dosyasında FEES SECTION altına ekle */
+
+.fee-list {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+    text-align: center;
 }
 
+.fee-list li {
+    font-size: 1.1rem;
+    color: var(--primary-navy); /* Yazılar koyu lacivert */
+    margin-bottom: 0.6rem;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px; /* Yazı ile fiyat arası boşluk */
+}
+
+.fee-list li span {
+    color: var(--accent-gold); /* Fiyatlar altın sarısı */
+    font-family: 'Cartoon Slam', cursive; /* Başlık fontuyla aynı */
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+}
 .fee-desc {
     color: #64748b;
     font-size: 0.95rem;
@@ -515,6 +570,7 @@ section {
     font-size: 1.4rem;
     margin-bottom: 1rem;
     color: var(--accent-gold);
+    font-family: 'Cartoon Slam', cursive;
 }
 
 .apply-link {
@@ -556,7 +612,7 @@ section {
     color: var(--primary-navy);
     margin-bottom: 0.5rem;
     font-weight: 600;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Cartoon Slam', cursive;
 }
 
 .faq-answer {
@@ -613,7 +669,6 @@ section {
 .contact-value {
     font-size: 1.2rem;
     color: var(--primary-navy);
-    font-family: 'Playfair Display', serif;
 }
 
 .contact-value a {
@@ -684,7 +739,6 @@ footer {
 
 /* --- ABOUT BUTONU & TEAM MODAL STİLLERİ --- */
 
-/* Butonun ortalanması ve stili */
 .about-btn-container {
     margin-top: 2rem;
     text-align: center;
@@ -693,14 +747,14 @@ footer {
 .custom-btn {
     display: inline-block;
     padding: 1rem 2.5rem;
-    background: var(--primary-navy); /* Temadaki lacivert */
-    color: var(--accent-gold);       /* Temadaki altın */
+    background: var(--primary-navy);
+    color: var(--accent-gold);
     border: 1px solid var(--primary-navy);
     text-decoration: none;
     font-weight: 500;
     font-size: 1rem;
     transition: all 0.3s ease;
-    border-radius: 4px; /* Hafif yuvarlak köşe */
+    border-radius: 4px;
 }
 
 .custom-btn:hover {
@@ -709,15 +763,13 @@ footer {
     border: 1px solid var(--primary-navy);
 }
 
-/* Modal İçerik Genişliği */
 .team-modal-content {
-    max-width: 800px; /* Team modalı biraz daha geniş olsun */
+    max-width: 800px;
     width: 90%;
-    max-height: 90vh; /* Çok uzun olursa scroll çıksın */
+    max-height: 90vh;
     overflow-y: auto;
 }
 
-/* Team Grid Yapısı */
 .team-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -725,7 +777,6 @@ footer {
     margin-top: 2rem;
 }
 
-/* Team Kartları */
 .team-card {
     background: var(--bg-grey);
     padding: 1.5rem;
@@ -750,7 +801,7 @@ footer {
 }
 
 .team-name {
-    font-family: 'Playfair Display', serif;
-    color: var(--primary-navy);
     font-size: 1.2rem;
+    color: var(--primary-navy);
+    font-family: 'Cartoon Slam', cursive;
 }
